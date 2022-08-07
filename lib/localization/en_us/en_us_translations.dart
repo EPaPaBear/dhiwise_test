@@ -15,12 +15,12 @@ final Map<String, String> enUs = {
   "lbl_user_s_name": "User's name",
   "lbl_name": "Name:",
   "lbl_phone": "Phone:",
-  "lbl_dashboard_phone": "Dashboard_Phone",
   "msg_already_have_an": "Already have an account? Sign In",
   "msg_dummyemail_doma": "dummyemail@domain.com",
   "lbl_login": "Login",
   "lbl_register": "Register",
   "lbl_app_navigation": "App Navigation",
+  "lbl_sussy_phone": "Sussy_Phone",
   "msg_please_fill_the2": "Please fill the form below to register",
   "msg_john_doe_smith": "John Doe Smith Dixie Normus"
 };

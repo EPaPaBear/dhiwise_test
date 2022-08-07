@@ -62,7 +62,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       children: [
                                         GestureDetector(
                                             onTap: () {
-                                              onTapDashboardPhone();
+                                              onTapSussyPhone();
                                             },
                                             child: Container(
                                                 width:
@@ -87,7 +87,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_dashboard_phone"
+                                                                  "lbl_sussy_phone"
                                                                       .tr,
                                                                   overflow:
                                                                       TextOverflow
@@ -217,8 +217,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                 ]))));
   }
 
-  onTapDashboardPhone() {
-    Get.toNamed(AppRoutes.dashboardPhoneScreen);
+  onTapSussyPhone() {
+    Get.toNamed(AppRoutes.sussyPhoneScreen);
   }
 
   onTapLoginPhone() {

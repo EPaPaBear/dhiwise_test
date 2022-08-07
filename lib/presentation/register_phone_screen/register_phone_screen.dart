@@ -4,7 +4,6 @@ import 'package:test/core/app_export.dart';
 import 'package:test/core/utils/validation_functions.dart';
 import 'package:test/widgets/custom_button.dart';
 import 'package:test/widgets/custom_text_form_field.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 // ignore_for_file: must_be_immutable
 class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
@@ -187,13 +186,15 @@ class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
 
   void _onCreateUsersSuccess() {
     Get.find<PrefUtils>().setName(controller.postUsersResp.message!.toString());
-    Get.toNamed(AppRoutes.dashboardPhoneScreen);
+    Get.toNamed(AppRoutes.sussyPhoneScreen);
   }
 
   void _onCreateUsersError() {
-    Fluttertoast.showToast(
-      msg: "Unable to register!",
-    );
+    Get.defaultDialog(
+        onConfirm: () => Get.back(),
+        title: "Registration Error",
+        middleText:
+            "Could not register right now. Please try again after some time.");
   }
 
   onTapTxtAlreadyhavean() {

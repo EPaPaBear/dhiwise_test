@@ -1,5 +1,5 @@
-import 'package:test/presentation/dashboard_phone_screen/dashboard_phone_screen.dart';
-import 'package:test/presentation/dashboard_phone_screen/binding/dashboard_phone_binding.dart';
+import 'package:test/presentation/sussy_phone_screen/sussy_phone_screen.dart';
+import 'package:test/presentation/sussy_phone_screen/binding/sussy_phone_binding.dart';
 import 'package:test/presentation/login_phone_screen/login_phone_screen.dart';
 import 'package:test/presentation/login_phone_screen/binding/login_phone_binding.dart';
 import 'package:test/presentation/register_phone_screen/register_phone_screen.dart';
@@ -9,7 +9,7 @@ import 'package:test/presentation/app_navigation_screen/binding/app_navigation_b
 import 'package:get/get.dart';
 
 class AppRoutes {
-  static String dashboardPhoneScreen = '/dashboard_phone_screen';
+  static String sussyPhoneScreen = '/sussy_phone_screen';
 
   static String loginPhoneScreen = '/login_phone_screen';
 
@@ -21,10 +21,10 @@ class AppRoutes {
 
   static List<GetPage> pages = [
     GetPage(
-      name: dashboardPhoneScreen,
-      page: () => DashboardPhoneScreen(),
+      name: sussyPhoneScreen,
+      page: () => SussyPhoneScreen(),
       bindings: [
-        DashboardPhoneBinding(),
+        SussyPhoneBinding(),
       ],
     ),
     GetPage(
@@ -50,9 +50,9 @@ class AppRoutes {
     ),
     GetPage(
       name: initialRoute,
-      page: () => DashboardPhoneScreen(),
+      page: () => SussyPhoneScreen(),
       bindings: [
-        DashboardPhoneBinding(),
+        SussyPhoneBinding(),
       ],
     )
   ];

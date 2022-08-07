@@ -25,3 +25,5 @@ export 'package:test/widgets/common_image_view.dart';
 
 export 'package:test/core/errors/exceptions.dart';
 export 'package:test/core/network/network_info.dart';
+
+export 'package:test/routes/navigation_args.dart';

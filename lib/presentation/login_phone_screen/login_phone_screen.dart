@@ -119,8 +119,30 @@ class LoginPhoneScreen extends GetWidget<LoginPhoneController> {
                             ])))))));
   }
 
-  onTapBtnLogin() {
-    Get.toNamed(AppRoutes.dashboardPhoneScreen);
+  void onTapBtnLogin() {
+    Map postAuthenticateReq = {
+      'email': controller.emailController.text,
+      'password': controller.passwordController.text,
+    };
+    controller.callCreateAuthenticate(
+      postAuthenticateReq,
+      successCall: _onCreateAuthenticateSuccess,
+      errCall: _onCreateAuthenticateError,
+    );
+  }
+
+  void _onCreateAuthenticateSuccess() {
+    Get.find<PrefUtils>().setName(controller.postAuthenticateResp);
+    Get.toNamed(AppRoutes.sussyPhoneScreen, arguments: {
+      NavigationArgs.name: controller.postAuthenticateResp.response!.name!
+    });
+  }
+
+  void _onCreateAuthenticateError() {
+    Get.defaultDialog(
+        onConfirm: () => Get.back(),
+        title: "Login Error",
+        middleText: "Invalid login credentials");
   }
 
   onTapTxtDonthaveana() {
