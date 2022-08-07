@@ -132,10 +132,7 @@ class LoginPhoneScreen extends GetWidget<LoginPhoneController> {
   }
 
   void _onCreateAuthenticateSuccess() {
-    Get.find<PrefUtils>().setName(controller.postAuthenticateResp);
-    Get.toNamed(AppRoutes.sussyPhoneScreen, arguments: {
-      NavigationArgs.name: controller.postAuthenticateResp.response!.name!
-    });
+    Get.toNamed(AppRoutes.sussyPhoneScreen);
   }
 
   void _onCreateAuthenticateError() {

@@ -5,16 +5,13 @@ import 'package:test/data/models/logout/post_logout_resp.dart';
 import 'package:test/data/apiClient/api_client.dart';
 
 class SussyPhoneController extends GetxController {
-  var name = Get.arguments[NavigationArgs.name];
-
   Rx<SussyPhoneModel> sussyPhoneModelObj = SussyPhoneModel().obs;
 
   PostLogoutResp postLogoutResp = PostLogoutResp();
 
   @override
-  void onReady() async {
+  void onReady() {
     super.onReady();
-    sussyPhoneModelObj.value.nameTxt.value = Get.find<PrefUtils>().getName();
   }
 
   @override

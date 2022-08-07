@@ -20,12 +20,10 @@ class SussyPhoneScreen extends GetWidget<SussyPhoneController> {
                             children: [
                       Padding(
                           padding: getPadding(left: 111, top: 405, right: 111),
-                          child: Obx(() => Text(
-                              controller.sussyPhoneModelObj.value.nameTxt.value,
+                          child: Text("lbl_user_s_name".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
-                              style:
-                                  AppStyle.txtPoppinsSemiBold26.copyWith()))),
+                              style: AppStyle.txtPoppinsSemiBold26.copyWith())),
                       CustomButton(
                           width: 205,
                           text: "lbl_log_out".tr,
