@@ -7,7 +7,7 @@ import 'package:test/data/apiClient/api_client.dart';
 class LoginPhoneController extends GetxController {
   TextEditingController emailController = TextEditingController();
 
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController groupSevenController = TextEditingController();
 
   Rx<LoginPhoneModel> loginPhoneModelObj = LoginPhoneModel().obs;
 
@@ -22,7 +22,7 @@ class LoginPhoneController extends GetxController {
   void onClose() {
     super.onClose();
     emailController.dispose();
-    passwordController.dispose();
+    groupSevenController.dispose();
   }
 
   void callCreateAuthenticate(Map req,

@@ -1,10 +1,10 @@
-import 'controller/sussy_phone_controller.dart';
+import 'controller/dashboard_phone_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/app_export.dart';
 import 'package:test/widgets/custom_button.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class SussyPhoneScreen extends GetWidget<SussyPhoneController> {
+class DashboardPhoneScreen extends GetWidget<DashboardPhoneController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -46,8 +46,6 @@ class SussyPhoneScreen extends GetWidget<SussyPhoneController> {
   }
 
   void _onCreateLogoutSuccess() {
-    Get.find<PrefUtils>()
-        .setMessage(controller.postLogoutResp.message!.toString());
     Get.toNamed(AppRoutes.loginPhoneScreen);
   }
 

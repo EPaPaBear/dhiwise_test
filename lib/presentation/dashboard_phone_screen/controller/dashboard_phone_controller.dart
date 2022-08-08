@@ -1,11 +1,11 @@
 import '/core/app_export.dart';
-import 'package:test/presentation/sussy_phone_screen/models/sussy_phone_model.dart';
+import 'package:test/presentation/dashboard_phone_screen/models/dashboard_phone_model.dart';
 import 'package:flutter/material.dart';
 import 'package:test/data/models/logout/post_logout_resp.dart';
 import 'package:test/data/apiClient/api_client.dart';
 
-class SussyPhoneController extends GetxController {
-  Rx<SussyPhoneModel> sussyPhoneModelObj = SussyPhoneModel().obs;
+class DashboardPhoneController extends GetxController {
+  Rx<DashboardPhoneModel> dashboardPhoneModelObj = DashboardPhoneModel().obs;
 
   PostLogoutResp postLogoutResp = PostLogoutResp();
 

@@ -25,7 +25,7 @@ class ApiClient extends GetConnect {
     return response.isOk;
   }
 
-  Future createLogout(
+  Future createAuthenticate(
       {Function(dynamic data)? onSuccess,
       Function(dynamic error)? onError,
       Map<String, String> headers = const {},
@@ -35,7 +35,7 @@ class ApiClient extends GetConnect {
         requestData.keys.map((key) => "$key=${requestData[key]}").join("&");
     try {
       await isNetworkConnected();
-      Response response = await httpClient.post('$url/api/logout',
+      Response response = await httpClient.post('$url/api/authenticate',
           headers: headers, body: encodedBody);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
@@ -51,7 +51,7 @@ class ApiClient extends GetConnect {
     }
   }
 
-  Future createAuthenticate(
+  Future createLogout(
       {Function(dynamic data)? onSuccess,
       Function(dynamic error)? onError,
       Map<String, String> headers = const {},
@@ -61,7 +61,7 @@ class ApiClient extends GetConnect {
         requestData.keys.map((key) => "$key=${requestData[key]}").join("&");
     try {
       await isNetworkConnected();
-      Response response = await httpClient.post('$url/api/authenticate',
+      Response response = await httpClient.post('$url/api/logout',
           headers: headers, body: encodedBody);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {

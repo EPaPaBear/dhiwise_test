@@ -49,7 +49,7 @@ class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
                               CustomTextFormField(
                                   width: 296,
                                   focusNode: FocusNode(),
-                                  controller: controller.nameController,
+                                  controller: controller.groupTwelveController,
                                   hintText: "msg_john_doe_smith".tr,
                                   margin:
                                       getMargin(left: 66, top: 17, right: 66),
@@ -101,7 +101,7 @@ class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
                               CustomTextFormField(
                                   width: 296,
                                   focusNode: FocusNode(),
-                                  controller: controller.phoneController,
+                                  controller: controller.groupTenController,
                                   hintText: "lbl_2331234567".tr,
                                   margin:
                                       getMargin(left: 66, top: 18, right: 66),
@@ -126,7 +126,7 @@ class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
                               CustomTextFormField(
                                   width: 296,
                                   focusNode: FocusNode(),
-                                  controller: controller.passwordController1,
+                                  controller: controller.groupNineController,
                                   hintText: "msg".tr,
                                   margin:
                                       getMargin(left: 66, top: 23, right: 66),
@@ -171,12 +171,7 @@ class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
   }
 
   void onTapBtnRegister() {
-    Map postUsersReq = {
-      'name': controller.nameController.text,
-      'email': controller.emailController1.text,
-      'phone': controller.phoneController.text,
-      'password': controller.passwordController1.text,
-    };
+    Map postUsersReq = {};
     controller.callCreateUsers(
       postUsersReq,
       successCall: _onCreateUsersSuccess,
@@ -186,7 +181,7 @@ class RegisterPhoneScreen extends GetWidget<RegisterPhoneController> {
 
   void _onCreateUsersSuccess() {
     Get.find<PrefUtils>().setName(controller.postUsersResp.message!.toString());
-    Get.toNamed(AppRoutes.sussyPhoneScreen);
+    Get.toNamed(AppRoutes.dashboardPhoneScreen);
   }
 
   void _onCreateUsersError() {

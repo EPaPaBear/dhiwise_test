@@ -32,16 +32,4 @@ class PrefUtils {
       return '';
     }
   }
-
-  Future<void> setMessage(String value) {
-    return _sharedPreferences!.setString('message', value);
-  }
-
-  String getMessage() {
-    try {
-      return _sharedPreferences!.getString('message') ?? '';
-    } catch (e) {
-      return '';
-    }
-  }
 }

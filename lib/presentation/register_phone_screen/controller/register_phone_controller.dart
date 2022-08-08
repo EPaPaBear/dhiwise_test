@@ -5,13 +5,13 @@ import 'package:test/data/models/users/post_users_resp.dart';
 import 'package:test/data/apiClient/api_client.dart';
 
 class RegisterPhoneController extends GetxController {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController groupTwelveController = TextEditingController();
 
   TextEditingController emailController1 = TextEditingController();
 
-  TextEditingController phoneController = TextEditingController();
+  TextEditingController groupTenController = TextEditingController();
 
-  TextEditingController passwordController1 = TextEditingController();
+  TextEditingController groupNineController = TextEditingController();
 
   Rx<RegisterPhoneModel> registerPhoneModelObj = RegisterPhoneModel().obs;
 
@@ -25,10 +25,10 @@ class RegisterPhoneController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    nameController.dispose();
+    groupTwelveController.dispose();
     emailController1.dispose();
-    phoneController.dispose();
-    passwordController1.dispose();
+    groupTenController.dispose();
+    groupNineController.dispose();
   }
 
   void callCreateUsers(Map req,
