@@ -132,7 +132,6 @@ class LoginPhoneScreen extends GetWidget<LoginPhoneController> {
   }
 
   void _onCreateAuthenticateSuccess() {
-    Get.find<PrefUtils>().setName(controller.postAuthenticateResp);
     Get.toNamed(AppRoutes.sussyPhoneScreen);
   }
 
