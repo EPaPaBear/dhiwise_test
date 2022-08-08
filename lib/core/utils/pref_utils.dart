@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:test/data/models/authenticate/post_authenticate_resp.dart';
 
 // ignore_for_file: must_be_immutable
 class PrefUtils {
