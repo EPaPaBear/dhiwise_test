@@ -34,26 +34,4 @@ class SussyPhoneScreen extends GetWidget<SussyPhoneController> {
                           onTap: onTapBtnLogout)
                     ]))))));
   }
-
-  void onTapBtnLogout() {
-    Map postLogoutReq = {};
-    controller.callCreateLogout(
-      postLogoutReq,
-      successCall: _onCreateLogoutSuccess,
-      errCall: _onCreateLogoutError,
-    );
-  }
-
-  void _onCreateLogoutSuccess() {
-    Get.find<PrefUtils>()
-        .setMessage(controller.postLogoutResp.message!.toString());
-    Get.toNamed(AppRoutes.loginPhoneScreen);
-  }
-
-  void _onCreateLogoutError() {
-    Get.defaultDialog(
-        onConfirm: () => Get.back(),
-        title: "Logout Error",
-        middleText: "Could not logout");
-  }
 }

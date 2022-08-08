@@ -51,32 +51,6 @@ class ApiClient extends GetConnect {
     }
   }
 
-  Future createLogout(
-      {Function(dynamic data)? onSuccess,
-      Function(dynamic error)? onError,
-      Map<String, String> headers = const {},
-      Map requestData = const {}}) async {
-    ProgressDialogUtils.showProgressDialog();
-    String encodedBody =
-        requestData.keys.map((key) => "$key=${requestData[key]}").join("&");
-    try {
-      await isNetworkConnected();
-      Response response = await httpClient.post('$url/api/logout',
-          headers: headers, body: encodedBody);
-      ProgressDialogUtils.hideProgressDialog();
-      if (_isSuccessCall(response)) {
-        onSuccess!(response.body);
-      } else {
-        onError!(
-          response.hasError ? response.statusText : 'Something Went Wrong!',
-        );
-      }
-    } catch (error) {
-      ProgressDialogUtils.hideProgressDialog();
-      onError!(error);
-    }
-  }
-
   Future createUsers(
       {Function(dynamic data)? onSuccess,
       Function(dynamic error)? onError,
