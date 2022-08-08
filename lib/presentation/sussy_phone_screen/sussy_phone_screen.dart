@@ -2,6 +2,7 @@ import 'controller/sussy_phone_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/app_export.dart';
 import 'package:test/widgets/custom_button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SussyPhoneScreen extends GetWidget<SussyPhoneController> {
   @override
@@ -45,13 +46,14 @@ class SussyPhoneScreen extends GetWidget<SussyPhoneController> {
   }
 
   void _onCreateLogoutSuccess() {
+    Get.find<PrefUtils>()
+        .setMessage(controller.postLogoutResp.message!.toString());
     Get.toNamed(AppRoutes.loginPhoneScreen);
   }
 
   void _onCreateLogoutError() {
-    Get.defaultDialog(
-        onConfirm: () => Get.back(),
-        title: "Logout Error",
-        middleText: "Could not log out at the moment. Please try again later");
+    Fluttertoast.showToast(
+      msg: "Logout error",
+    );
   }
 }
