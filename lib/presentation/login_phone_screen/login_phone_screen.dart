@@ -120,7 +120,10 @@ class LoginPhoneScreen extends GetWidget<LoginPhoneController> {
   }
 
   void onTapBtnLogin() {
-    Map postAuthenticateReq = {};
+    Map postAuthenticateReq = {
+      'email': controller.emailController.text,
+      'password': controller.groupSevenController.text,
+    };
     controller.callCreateAuthenticate(
       postAuthenticateReq,
       successCall: _onCreateAuthenticateSuccess,
@@ -129,7 +132,6 @@ class LoginPhoneScreen extends GetWidget<LoginPhoneController> {
   }
 
   void _onCreateAuthenticateSuccess() {
-    Get.find<PrefUtils>().setName(controller.postAuthenticateResp);
     Get.toNamed(AppRoutes.dashboardPhoneScreen);
   }
 
@@ -137,7 +139,7 @@ class LoginPhoneScreen extends GetWidget<LoginPhoneController> {
     Get.defaultDialog(
         onConfirm: () => Get.back(),
         title: "Login Error",
-        middleText: "Unable to login at the moment");
+        middleText: "Could not login");
   }
 
   onTapTxtDonthaveana() {
